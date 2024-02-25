@@ -13,6 +13,7 @@
 - Clone this repository: **$ git clone git@github.com:Mahmoud-Mohamed-Elgamily/mahmoud-mohamed-213.git**
 - create mysql database
 - create .env file **$ cp .env.temp .env**
+- update .env with your values
 - Install dependencies: **$ npm install**
 - Start the development server: **$ npm run start**
 
