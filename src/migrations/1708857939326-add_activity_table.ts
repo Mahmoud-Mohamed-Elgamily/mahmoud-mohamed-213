@@ -32,10 +32,12 @@ export class AddActivityTable1708857939326 implements MigrationInterface {
           {
             name: 'listing_from',
             type: 'datetime',
+            isNullable: true,
           },
           {
             name: 'listing_to',
             type: 'datetime',
+            isNullable: true,
           },
           {
             name: 'event_timestamp',
