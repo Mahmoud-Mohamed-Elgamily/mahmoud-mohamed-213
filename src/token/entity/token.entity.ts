@@ -6,6 +6,9 @@ export class Token extends BaseEntity {
   id: string;
 
   @Column()
+  index: string;
+
+  @Column()
   contract_address: string;
 
   @Column({ nullable: true })
