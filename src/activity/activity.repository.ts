@@ -1,10 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 import { Activity } from './entity/activity.entity';
+import { ConfigService } from '@nestjs/config';
+import { IRecentActivities } from './types/recent-activities';
 
 @Injectable()
 export class ActivityRepository extends Repository<Activity> {
-  constructor(private entityManager: EntityManager) {
+  constructor(
+    private entityManager: EntityManager,
+    private configService: ConfigService,
+  ) {
     super(Activity, entityManager);
   }
 
@@ -36,5 +41,18 @@ export class ActivityRepository extends Repository<Activity> {
       } as Activity;
     });
     await this.createQueryBuilder().insert().values(ActivityRecords).execute();
+  }
+
+  async findRecentlyInserted(): Promise<IRecentActivities[]> {
+    return await this.find({
+      order: { id: 'DESC' },
+      take: this.configService.get('RECORDS_LIMIT') || 1000,
+      select: [
+        'contract_address',
+        'token_index',
+        'listing_to',
+        'listing_price',
+      ],
+    });
   }
 }

@@ -24,6 +24,12 @@ export class AddTokenTable1708857966406 implements MigrationInterface {
           {
             name: 'current_price',
             type: 'decimal(10,5)',
+            isNullable: true,
+          },
+          {
+            name: 'listing_to',
+            type: 'datetime',
+            isNullable: true,
           },
         ],
       }),

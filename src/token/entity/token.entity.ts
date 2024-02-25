@@ -11,6 +11,9 @@ export class Token extends BaseEntity {
   @Column()
   contract_address: string;
 
+  @Column()
+  listing_to: Date;
+
   @Column({ type: 'decimal', nullable: true })
   current_price: number;
 }
