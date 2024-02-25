@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BaseEntity,
+  Decimal128,
+} from 'typeorm';
 
 @Entity('activity')
 export class Activity extends BaseEntity {
@@ -11,7 +17,7 @@ export class Activity extends BaseEntity {
   @Column()
   token_index: string;
 
-  @Column()
+  @Column({ type: 'decimal' })
   listing_price: number;
 
   @Column()

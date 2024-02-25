@@ -23,7 +23,7 @@ export class AddActivityTable1708857939326 implements MigrationInterface {
           },
           {
             name: 'listing_price',
-            type: 'decimal',
+            type: 'decimal(10,5)',
           },
           {
             name: 'maker',

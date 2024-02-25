@@ -23,7 +23,7 @@ export class AddTokenTable1708857966406 implements MigrationInterface {
           },
           {
             name: 'current_price',
-            type: 'decimal',
+            type: 'decimal(10,5)',
           },
         ],
       }),
